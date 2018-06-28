@@ -30,9 +30,9 @@ use Google\Cloud\Dialogflow\V2\QueryInput;
 function detect_intent_texts($projectId, $texts, $sessionId, $languageCode = 'en-US')
 {
     // new session
-    // $sessionsClient = new SessionsClient();
-    // $session = $sessionsClient->sessionName($projectId, $sessionId ?: uniqid());
-    // printf('Session path: %s' . PHP_EOL, $session);
+    $sessionsClient = new SessionsClient();
+    $session = $sessionsClient->sessionName($projectId, $sessionId ?: uniqid());
+    printf('Session path: %s' . PHP_EOL, $session);
 
     // query for each string in array
     foreach ($texts as $text) {
