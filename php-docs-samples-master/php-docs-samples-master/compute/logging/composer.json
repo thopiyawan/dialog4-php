@@ -1,8 +1,0 @@
-{
-    "require": {
-        "fluent/logger": "^1.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~4"
-    }
-}

@@ -1,8 +1,0 @@
-runtime: php
-env: flex
-
-runtime_config:
-  document_root: .
-  # [START enabling_stackdriver_integration]
-  enable_stackdriver_integration: true
-  # [END enabling_stackdriver_integration]
