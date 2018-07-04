@@ -25,9 +25,10 @@ function sendMessage($parameters) {
  */
 $update_response = file_get_contents("php://input");
 $update = json_decode($update_response, true);
+dd($update);
 
 if (isset($update["result"]["action"])) {
-    echo "ssss";
+
     processMessage($update);
 }
 
