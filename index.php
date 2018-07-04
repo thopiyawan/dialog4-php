@@ -3,6 +3,7 @@
  * PROCESSANDO A MENSAGEM 
  * QUE CHEGA DO BOT
  */
+echo '555';
 function processMessage($update) {
     if($update["result"]["action"] == "buscar.nfe"){
         sendMessage(array(
@@ -25,6 +26,7 @@ function sendMessage($parameters) {
  */
 $update_response = file_get_contents("php://input");
 $update = json_decode($update_response, true);
+
 if (isset($update["result"]["action"])) {
     processMessage($update);
 }
