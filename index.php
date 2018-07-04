@@ -30,6 +30,7 @@ $update = json_decode($update_response, true);
 if (isset($update["result"]["action"])) {
 
     processMessage($update);
+    print_r($update);
 }
 
 ?>
