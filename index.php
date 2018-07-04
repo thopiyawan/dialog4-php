@@ -7,7 +7,7 @@ function processMessage($text) {
     if($text == "แพ้อาหาร"){
    
         sendMessage(array(
-            "source" => $update["result"]["source"],
+            "source" => "22222",
             "speech" => "..........TEXT HERE...........",
             "displayText" => ".........TEXT HERE...........",
             "contextOut" => array()
@@ -31,10 +31,10 @@ $update = json_decode($update_response, true);
 
  if(!is_null($update)){
             // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
-            $replyToken  = $update ['events'][0]['replyToken'];
-            $user = $update['events'][0]['source']['userId'];
+            // $replyToken  = $update ['events'][0]['replyToken'];
+            // $user = $update['events'][0]['source']['userId'];
             $text = $update['events'][0]['message']['text'];
-            $type_message = $update['events'][0]['message']['type'];
+            // $type_message = $update['events'][0]['message']['type'];
             processMessage($text);
 
  }
