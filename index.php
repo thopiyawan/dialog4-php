@@ -5,6 +5,7 @@
  */
 function processMessage($update) {
     if($update["result"]["action"] == "buscar.nfe"){
+        print_r('55');
         sendMessage(array(
             "source" => $update["result"]["source"],
             "speech" => "..........TEXT HERE...........",
@@ -29,8 +30,8 @@ $update = json_decode($update_response, true);
 
 if (isset($update["result"]["action"])) {
 
-    processMessage($update);
-    print_r($update);
+      processMessage($update);
+
 }
 
 ?>
