@@ -4,16 +4,29 @@
 function processMessage($update) {
     if($update["result"]["action"] == "sayHello"){
         sendMessage(array(
-            "source" => $update["result"]["source"],
-            "speech" => "Hello from webhook",
-            "displayText" => "Hello from webhook",
-            "contextOut" => array()
+             "speech"=> "",
+                      "messages"=> [array(
+                                       "title"=> 'Oblivion',
+                                       "subtitle"=> 'Oblivion is a SciFi film.',
+                                       "buttons"=> [ array(
+                                                      "text"=> "view film",
+                                                      "postback"=>"https://www.moovrika.com/m/3520"
+                                                  ),
+                                           array(
+                                                      "text"=> "Ask something else",
+                                                      "postback"=>"I want to ask something else"
+                                                  )
+                                            ]
+                                          ,
+                                        "type"=> 1
+                                   )]
         ));
     }
 }
 
 function sendMessage($parameters) {
-    echo json_encode($parameters);
+	header('Content-Type: application/json');
+    echo json_encode($parameters, JSON_UNESCAPED_SLASHES);
 }
 
 $update_response = file_get_contents("php://input");
