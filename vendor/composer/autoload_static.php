@@ -18,6 +18,10 @@ class ComposerStaticInit2a2c71350e60493183d88d9e9e96adbe
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Cache\\' => 10,
         ),
+        'L' => 
+        array (
+            'LINE\\' => 5,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -53,6 +57,10 @@ class ComposerStaticInit2a2c71350e60493183d88d9e9e96adbe
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'LINE\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linecorp/line-bot-sdk/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
