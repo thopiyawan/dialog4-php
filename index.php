@@ -13,7 +13,7 @@ require __DIR__.'/vendor/autoload.php';
 detect_intent_texts('bot-test-3174f','หิวมาก','123456');
 
 
-function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'en-US')
+function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th')
 {
     // new session
     $test = array('credentials' => 'client-secret.json');
