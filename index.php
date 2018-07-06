@@ -109,5 +109,5 @@ function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th'
     // printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     
     $sessionsClient->close();
-    return $fulfilmentText;
+   
 }
