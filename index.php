@@ -70,8 +70,8 @@ if(!is_null($events)){
 // Failed
 // echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
-//$text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
-$text = '555';
+$text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
+//$text = '555';
 $textMessageBuilder = new TextMessageBuilder($text);
 $response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
