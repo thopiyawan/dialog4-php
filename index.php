@@ -19,7 +19,7 @@ function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th'
     $test = array('credentials' => 'client-secret.json');
     $sessionsClient = new SessionsClient($test);
     $session = $sessionsClient->sessionName($projectId, $sessionId ?: uniqid());
-    printf('Session path: %s' . PHP_EOL, $session);
+    // printf('Session path: %s' . PHP_EOL, $session);
  
     // create text input
     $textInput = new TextInput();
