@@ -58,7 +58,7 @@ if(!is_null($events)){
     $userMessage = $events['events'][0]['message']['text'];
 }
 // ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
-// $textMessageBuilder = new TextMessageBuilder(json_encode($events));
+$textMessageBuilder = new TextMessageBuilder(json_encode($events));
  
 //l ส่วนของคำสั่งตอบกลับข้อความ
 
@@ -72,7 +72,7 @@ if(!is_null($events)){
 
 //$text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
 //$text = '555';
-$textMessageBuilder = new TextMessageBuilder($events);
+// $textMessageBuilder = new TextMessageBuilder($events);
 $response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
 
