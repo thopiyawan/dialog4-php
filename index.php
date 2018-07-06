@@ -61,9 +61,44 @@ if(!is_null($events)){
 //ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
 // $textMessageBuilder = new TextMessageBuilder(json_encode($events));
 
-    $a =  detect_intent_texts('remiai-29f47',json_encode($userMessage, JSON_UNESCAPED_UNICODE ),'123456');
+if($userMessage == 'สนใจ'){
+	$a = 'ชื่ออะไร';
     $textMessageBuilder = new TextMessageBuilder($a);
+
+}else{
+	 $a =  detect_intent_texts('remiai-29f47',json_encode($userMessage, JSON_UNESCAPED_UNICODE ),'123456');
+	     $textMessageBuilder = new TextMessageBuilder($a);
+
+}
+
+   
+   
     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function detect_intent_texts($projectId, $text, $sessionId , $languageCode = 'th')
