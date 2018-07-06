@@ -62,9 +62,9 @@ if(!is_null($events)){
  
 
 
-$text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
+//$text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
 
-$textMessageBuilder = new TextMessageBuilder($text);
+$textMessageBuilder = new TextMessageBuilder($userMessage );
 $response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
 
