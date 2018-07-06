@@ -60,17 +60,10 @@ if(!is_null($events)){
 }
 //ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
 // $textMessageBuilder = new TextMessageBuilder(json_encode($events));
- 
 
-
-  
-
-
-    $a =  detect_intent_texts('bot-test-3174f',json_encode($userMessage),'123456');
+    $a =  detect_intent_texts('remiai-29f47',json_encode($userMessage),'123456');
     $textMessageBuilder = new TextMessageBuilder($a);
     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-
-   
 
 
 function detect_intent_texts($projectId, $text, $sessionId , $languageCode = 'th')
