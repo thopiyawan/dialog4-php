@@ -60,6 +60,8 @@ if(!is_null($events)){
 // ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
 // $textMessageBuilder = new TextMessageBuilder(json_encode($events));
  
+    $textMessageBuilder = new TextMessageBuilder($userMessage );
+    $response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
 
 detect_intent_texts('bot-test-3174f', $userMessage,'123456');
@@ -92,10 +94,6 @@ function detect_intent_texts($projectId, $text, $sessionId, $replyToken , $langu
     $displayName = $intent->getDisplayName();
     $confidence = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-
-    $textMessageBuilder = new TextMessageBuilder($userMessage );
-    $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-
     // // output relevant info
     // print(str_repeat("=", 20) . PHP_EOL);
     // printf('Query text: %s' . PHP_EOL, $queryText);
@@ -104,6 +102,6 @@ function detect_intent_texts($projectId, $text, $sessionId, $replyToken , $langu
     // print(PHP_EOL);
     // printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     
-    $sessionsClient->close();
+    // $sessionsClient->close();
    
 }
