@@ -1,7 +1,9 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+
 namespace Google\Cloud\Samples\Dialogflow;
+
+require __DIR__.'/vendor/autoload.php';
 use Google\Cloud\Dialogflow\V2\SessionsClient;
 use Google\Cloud\Dialogflow\V2\TextInput;
 use Google\Cloud\Dialogflow\V2\QueryInput;
