@@ -66,9 +66,9 @@ if(!is_null($events)){
 
     
    $a =  detect_intent_texts('bot-test-3174f','หิวมาก','123456');
-    // $textMessageBuilder = new TextMessageBuilder($userMessage);
-    // $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-  print($a);
+    $textMessageBuilder = new TextMessageBuilder($a);
+    $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+
    
 
 
