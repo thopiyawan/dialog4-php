@@ -70,13 +70,13 @@ if(!is_null($events)){
 // Failed
 // echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
-detect_intent_texts('bot-test-3174f', $userMessage,'123456');
+$text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
 //$text = '555';
-// $textMessageBuilder = new TextMessageBuilder($text);
+$textMessageBuilder = new TextMessageBuilder($text);
+$response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
 
-
-function detect_intent_texts($projectId, $text, $sessionId,$replyToken, $languageCode = 'th')
+function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th')
 {
     // new session
     $test = array('credentials' => 'client-secret.json');
@@ -101,9 +101,7 @@ function detect_intent_texts($projectId, $text, $sessionId,$replyToken, $languag
     $displayName = $intent->getDisplayName();
     $confidence = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    // $textMessageBuilder = new TextMessageBuilder($fulfilmentText);
-    // $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-    
+
     // // output relevant info
     // print(str_repeat("=", 20) . PHP_EOL);
     // printf('Query text: %s' . PHP_EOL, $queryText);
@@ -112,6 +110,6 @@ function detect_intent_texts($projectId, $text, $sessionId,$replyToken, $languag
     // print(PHP_EOL);
     // printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     
-    // $sessionsClient->close();
+    $sessionsClient->close();
    
 }
