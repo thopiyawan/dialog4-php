@@ -55,7 +55,7 @@ $events = json_decode($content, true);
 if(!is_null($events)){
     // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
     $replyToken = $events['events'][0]['replyToken'];
-    $userMessage = $events['events'][0]['message']['text'];
+    
 }
 //ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
 // $textMessageBuilder = new TextMessageBuilder(json_encode($events));
@@ -64,8 +64,8 @@ if(!is_null($events)){
 
   
 
-    
-   $a =  detect_intent_texts('bot-test-3174f','หิวมาก','123456');
+    $userMessage = $events['events'][0]['message']['text'];
+   $a =  detect_intent_texts('bot-test-3174f',$userMessage,'123456');
     $textMessageBuilder = new TextMessageBuilder($a);
     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
