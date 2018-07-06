@@ -72,11 +72,11 @@ if(!is_null($events)){
 
 $text = detect_intent_texts('bot-test-3174f', $userMessage,'123456');
 //$text = '555';
-$textMessageBuilder = new TextMessageBuilder($text);
-$response = $bot->replyMessage($replyToken,$textMessageBuilder);
+// $textMessageBuilder = new TextMessageBuilder($text);
 
 
-function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th')
+
+function detect_intent_texts($projectId, $text, $sessionId,$replyToken, $languageCode = 'th')
 {
     // new session
     $test = array('credentials' => 'client-secret.json');
@@ -101,7 +101,9 @@ function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th'
     $displayName = $intent->getDisplayName();
     $confidence = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    return  $fulfilmentText;
+    $textMessageBuilder = new TextMessageBuilder($fulfilmentText);
+    $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+    
     // // output relevant info
     // print(str_repeat("=", 20) . PHP_EOL);
     // printf('Query text: %s' . PHP_EOL, $queryText);
