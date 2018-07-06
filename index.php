@@ -63,11 +63,11 @@ if(!is_null($events)){
 
 
   
-    $textMessageBuilder = new TextMessageBuilder($userMessage );
+
+    
+    detect_intent_texts('bot-test-3174f', $userMessage,'123456', $replyToken);
+    $textMessageBuilder = new TextMessageBuilder($userMessage);
     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-
-      $this->detect_intent_texts('bot-test-3174f', $userMessage, $replyToken,'123456');
-
 
 
 
@@ -105,6 +105,6 @@ function detect_intent_texts($projectId, $text, $sessionId, $replyToken , $langu
     // print(PHP_EOL);
     // printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     
-    // $sessionsClient->close();
+    $sessionsClient->close();
    
 }
