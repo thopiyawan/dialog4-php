@@ -38,7 +38,7 @@ function detect_intent_texts($projectId, $text, $sessionId, $languageCode = 'th'
     $displayName = $intent->getDisplayName();
     $confidence = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-  print($getFulfillmentText);
+    echo $getFulfillmentText;
     // output relevant info
     // print(str_repeat("=", 20) . PHP_EOL);
     // printf('Query text: %s' . PHP_EOL, $queryText);
