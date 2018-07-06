@@ -101,8 +101,8 @@ function detect_intent_texts($projectId, $text, $sessionId,$replyToken, $languag
     $displayName = $intent->getDisplayName();
     $confidence = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    $textMessageBuilder = new TextMessageBuilder($fulfilmentText);
-    $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+    // $textMessageBuilder = new TextMessageBuilder($fulfilmentText);
+    // $response = $bot->replyMessage($replyToken,$textMessageBuilder);
     
     // // output relevant info
     // print(str_repeat("=", 20) . PHP_EOL);
