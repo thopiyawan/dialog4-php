@@ -8,7 +8,7 @@ use Google\Cloud\Dialogflow\V2\SessionsClient;
 use Google\Cloud\Dialogflow\V2\TextInput;
 use Google\Cloud\Dialogflow\V2\QueryInput;
 
-///////////// ส่วนของการเรียกใช้งาน class ผ่าน namespace
+/////////// ส่วนของการเรียกใช้งาน class ผ่าน namespace
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -57,7 +57,7 @@ if(!is_null($events)){
     $replyToken = $events['events'][0]['replyToken'];
     $userMessage = $events['events'][0]['message']['text'];
 }
-// ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
+//ส่วนของคำสั่งจัดเตียมรูปแบบข้อความสำหรับส่ง
 // $textMessageBuilder = new TextMessageBuilder(json_encode($events));
  
 
@@ -65,11 +65,11 @@ if(!is_null($events)){
   
 
     
-    detect_intent_texts('bot-test-3174f', $userMessage,'123456');
-    $textMessageBuilder = new TextMessageBuilder($userMessage);
-    $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-
-
+   $a =  detect_intent_texts('bot-test-3174f','หิวมาก','123456');
+    // $textMessageBuilder = new TextMessageBuilder($userMessage);
+    // $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+  print($a);
+   
 
 
 function detect_intent_texts($projectId, $text, $sessionId , $languageCode = 'th')
@@ -97,7 +97,8 @@ function detect_intent_texts($projectId, $text, $sessionId , $languageCode = 'th
     $displayName = $intent->getDisplayName();
     $confidence = $queryResult->getIntentDetectionConfidence();
     $fulfilmentText = $queryResult->getFulfillmentText();
-    // // output relevant info
+
+    // output relevant info
     // print(str_repeat("=", 20) . PHP_EOL);
     // printf('Query text: %s' . PHP_EOL, $queryText);
     // printf('Detected intent: %s (confidence: %f)' . PHP_EOL, $displayName,
@@ -106,5 +107,6 @@ function detect_intent_texts($projectId, $text, $sessionId , $languageCode = 'th
     // printf('Fulfilment text: %s' . PHP_EOL, $fulfilmentText);
     
     $sessionsClient->close();
+     return $fulfilmentText;
    
 }
