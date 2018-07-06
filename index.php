@@ -65,14 +65,14 @@ if(!is_null($events)){
   
 
     
-    detect_intent_texts('bot-test-3174f', $userMessage,'123456', $replyToken);
+    detect_intent_texts('bot-test-3174f', $userMessage,'123456');
     $textMessageBuilder = new TextMessageBuilder($userMessage);
     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
 
 
 
 
-function detect_intent_texts($projectId, $text, $sessionId, $replyToken , $languageCode = 'th')
+function detect_intent_texts($projectId, $text, $sessionId , $languageCode = 'th')
 {
     // new session
     $test = array('credentials' => 'client-secret.json');
